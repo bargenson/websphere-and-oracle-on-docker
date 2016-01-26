@@ -1,0 +1,10 @@
+app:
+  image: bnc-app
+  links: 
+   - "db:oracle"
+  ports:
+   - "80:9080"
+   - "443:9443"
+
+db:
+  image: wnameless/oracle-xe-11g

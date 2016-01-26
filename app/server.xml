@@ -1,0 +1,24 @@
+<server description="Default Server">
+
+    <featureManager>
+        <feature>javaee-7.0</feature>
+    </featureManager>
+
+    <basicRegistry id="basic" realm="BasicRealm">
+        <user name="user" password="password"/>
+    </basicRegistry>
+
+    <httpEndpoint id="defaultHttpEndpoint" host="*" httpPort="9080" httpsPort="9443"/>
+
+    <keyStore id="defaultKeyStore" password="Liberty"/>
+
+    <dataSource id="visitor-ds" jndiName="jdbc/visitor-ds">
+        <jdbcDriver libraryRef="OracleLib"/>
+        <properties.oracle user="system" password="oracle" url="jdbc:oracle:thin:@//oracle:1521/xe"/>
+    </dataSource>
+
+    <library id="OracleLib">
+        <fileset dir="/config/lib" includes="ojdbc6.jar" />
+    </library>
+
+</server>

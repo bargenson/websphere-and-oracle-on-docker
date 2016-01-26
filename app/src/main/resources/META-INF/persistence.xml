@@ -1,0 +1,10 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="visitor" transaction-type="JTA">
+        <jta-data-source>jdbc/visitor-ds</jta-data-source>
+        <class>com.clevertoday.bnc.model.Visitor</class>
+        <properties>
+            <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema" />
+            <property name="eclipselink.ddl-generation" value="drop-and-create-tables" />
+        </properties>
+    </persistence-unit>
+</persistence>
